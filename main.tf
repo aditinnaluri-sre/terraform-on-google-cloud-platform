@@ -4,7 +4,9 @@ resource "google_storage_bucket" "buk-dev-tans-trainings" {
   project  = "var.project_id"
 
 
-  force_destroy = "var.force_destory"
+  force_destroy = var.force_destory
+
+  force_destroy
 
   lifecycle_rule {
     condition { num_newer_versions = "var.num_newer_versions" }
