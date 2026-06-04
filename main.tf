@@ -1,10 +1,10 @@
 resource "google_storage_bucket" "buk-dev-tans-trainings" {
-  name     = "var.bucket_name"
-  location = "var.region"
-  project  = "var.project_id"
+  name     = var.bucket_name
+  location = var.region
+  project  = var.project_id
 
 
-  force_destroy = var.force_destory
+  force_destroy               = var.force_destroy
 
   lifecycle_rule {
     condition { num_newer_versions = "var.num_newer_versions" }
@@ -12,7 +12,7 @@ resource "google_storage_bucket" "buk-dev-tans-trainings" {
   }
 
   labels = {
-    env        = "var.environment"
+    env        = var.environment
     managed-by = "terraform"
   }
 
