@@ -7,7 +7,7 @@ resource "google_storage_bucket" "buk-dev-tans-trainings" {
   force_destroy = var.force_destroy
 
   lifecycle_rule {
-    condition { num_newer_versions = "var.num_newer_versions" }
+    condition { num_newer_versions = var.num_newer_versions }
     action { type = "Delete" }
   }
 
