@@ -12,7 +12,7 @@ resource "google_storage_bucket" "buk-dev-tans-trainings" {
   }
 
   labels = {
-    env        = var.environment
+    env        = "var.environment"
     managed-by = "terraform"
   }
 
